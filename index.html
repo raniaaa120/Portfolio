@@ -3,25 +3,27 @@
 <html lang="de">
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="Das persönliche Portfolio von Rania">
-  <title>Rania | Mein Portfolio</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Rania Studio – Creative Portfolio für Social Media Marketing, Content Creation und Video Editing.">
+  <title>Rania Studio | Creative Portfolio</title>
 
   <style>
+    @import url('https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:ital,wght@0,500;0,600;0,700;1,500;1,600&display=swap');
+
     :root {
-      --bg: #fafaf8;
-      --white: #ffffff;
-      --text: #202421;
-      --muted: #68716b;
-      --green: #376b57;
-      --lightgreen: #e8f0e9;
-      --border: #e1e7e1;
+      --cream: #f6f1e9;
+      --black: #231e20;
+      --wine: #873b4d;
+      --pink: #c89ca8;
+      --muted: #726866;
+      --line: #ded3ca;
+      --white: #fffdfa;
     }
 
     * {
+      box-sizing: border-box;
       margin: 0;
       padding: 0;
-      box-sizing: border-box;
     }
 
     html {
@@ -29,257 +31,513 @@
     }
 
     body {
-      font-family: Arial, Helvetica, sans-serif;
-      background: var(--bg);
-      color: var(--text);
-      line-height: 1.7;
+      background: var(--cream);
+      color: var(--black);
+      font-family: 'DM Sans', sans-serif;
+      overflow-x: hidden;
     }
 
     a {
-      text-decoration: none;
       color: inherit;
+      text-decoration: none;
+    }
+
+    button {
+      font: inherit;
     }
 
     .container {
-      width: 90%;
-      max-width: 1100px;
+      width: min(90%, 1250px);
       margin: auto;
     }
 
+    /* NAVIGATION */
     header {
-      background: rgba(250,250,248,0.96);
-      border-bottom: 1px solid var(--border);
       position: sticky;
       top: 0;
-      z-index: 100;
+      z-index: 50;
+      background: rgba(246,241,233,.95);
+      border-bottom: 1px solid var(--line);
+      backdrop-filter: blur(15px);
     }
 
     nav {
-      min-height: 75px;
+      min-height: 80px;
       display: flex;
-      align-items: center;
       justify-content: space-between;
+      align-items: center;
       gap: 20px;
     }
 
     .logo {
-      font-size: 26px;
-      font-weight: bold;
+      font-size: 23px;
+      font-weight: 700;
+      letter-spacing: -1px;
     }
 
-    .logo span,
-    .highlight {
-      color: var(--green);
+    .logo span {
+      color: var(--wine);
     }
 
     .nav-links {
       display: flex;
-      gap: 25px;
-      flex-wrap: wrap;
+      gap: 30px;
+      align-items: center;
     }
 
     .nav-links a {
-      font-size: 14px;
-      transition: color 0.3s;
+      font-size: 12px;
+      font-weight: 700;
+      letter-spacing: 1.5px;
+      transition: color .3s;
     }
 
     .nav-links a:hover {
-      color: var(--green);
+      color: var(--wine);
     }
 
-    section {
-      padding: 90px 0;
-      scroll-margin-top: 75px;
-    }
-
+    /* HERO */
     .hero {
-      min-height: 560px;
+      min-height: 85vh;
       display: flex;
       align-items: center;
+      padding: 100px 0;
+      position: relative;
+    }
+
+    .hero-content {
+      max-width: 1150px;
     }
 
     .eyebrow {
-      color: var(--green);
-      font-size: 13px;
-      font-weight: bold;
-      letter-spacing: 2px;
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      color: var(--wine);
+      font-weight: 700;
+      font-size: 12px;
+      letter-spacing: 2.5px;
       text-transform: uppercase;
-      margin-bottom: 18px;
+      margin-bottom: 30px;
+    }
+
+    .dot {
+      width: 9px;
+      height: 9px;
+      background: var(--wine);
+      border-radius: 50%;
+    }
+
+    h1, h2, h3 {
+      letter-spacing: -1.5px;
     }
 
     h1 {
-      font-size: clamp(42px, 7vw, 76px);
-      line-height: 1.15;
-      margin-bottom: 25px;
-      letter-spacing: -2px;
-    }
-
-    h2 {
-      font-size: clamp(30px, 5vw, 42px);
-      line-height: 1.3;
-      margin-bottom: 25px;
-    }
-
-    h3 {
-      font-size: 21px;
-      margin-bottom: 12px;
-    }
-
-    p {
-      color: var(--muted);
-    }
-
-    .hero p {
-      max-width: 590px;
-      font-size: 18px;
-      margin-bottom: 32px;
-    }
-
-    .button {
-      display: inline-block;
-      background: var(--green);
-      color: white;
-      padding: 13px 26px;
-      border-radius: 40px;
-      font-weight: bold;
-      font-size: 14px;
-      transition: transform 0.3s, background 0.3s;
-    }
-
-    .button:hover {
-      background: #24503f;
-      transform: translateY(-3px);
-    }
-
-    .section-intro {
-      max-width: 680px;
+      font-size: clamp(52px, 8vw, 115px);
+      line-height: 1.08;
+      font-weight: 600;
+      letter-spacing: -5px;
       margin-bottom: 35px;
     }
 
+    .serif {
+      font-family: 'Playfair Display', serif;
+      font-style: italic;
+      font-weight: 500;
+      color: var(--wine);
+    }
+
+    .hero-description {
+      max-width: 540px;
+      line-height: 1.85;
+      color: var(--muted);
+      font-size: 17px;
+      margin-bottom: 35px;
+    }
+
+    .btn {
+      display: inline-flex;
+      justify-content: center;
+      align-items: center;
+      gap: 25px;
+      padding: 17px 30px;
+      background: var(--wine);
+      color: white;
+      border-radius: 40px;
+      font-size: 12px;
+      font-weight: 700;
+      letter-spacing: 1px;
+      transition: transform .3s, background .3s;
+    }
+
+    .btn:hover {
+      background: var(--black);
+      transform: translateY(-4px);
+    }
+
+    .hero-decoration {
+      position: absolute;
+      right: 6%;
+      bottom: 14%;
+      color: var(--wine);
+      font-size: 90px;
+      opacity: .32;
+      animation: rotate 20s linear infinite;
+      pointer-events: none;
+    }
+
+    @keyframes rotate {
+      to { transform: rotate(360deg); }
+    }
+
+    /* MARQUEE */
+    .marquee {
+      background: var(--black);
+      color: var(--cream);
+      overflow: hidden;
+      padding: 23px 0;
+    }
+
+    .marquee-track {
+      display: flex;
+      width: max-content;
+      animation: move 35s linear infinite;
+    }
+
+    .marquee span {
+      white-space: nowrap;
+      font-size: 15px;
+      font-weight: 600;
+      letter-spacing: 2px;
+      padding-right: 50px;
+    }
+
+    .marquee b {
+      color: var(--pink);
+      margin-left: 50px;
+    }
+
+    @keyframes move {
+      to { transform: translateX(-50%); }
+    }
+
+    /* ALL SECTIONS */
+    section {
+      scroll-margin-top: 90px;
+    }
+
+    .section {
+      padding: 110px 0;
+    }
+
+    .section-label {
+      color: var(--wine);
+      font-size: 12px;
+      letter-spacing: 2px;
+      font-weight: 700;
+      margin-bottom: 20px;
+    }
+
+    h2 {
+      font-size: clamp(38px, 5vw, 70px);
+      line-height: 1.2;
+      font-weight: 600;
+      margin-bottom: 35px;
+    }
+
+    .section-text {
+      color: var(--muted);
+      font-size: 17px;
+      line-height: 1.9;
+      max-width: 690px;
+    }
+
+    /* ABOUT */
     .about-grid {
       display: grid;
-      grid-template-columns: 1.5fr 1fr;
-      gap: 25px;
+      grid-template-columns: 1fr 1fr;
+      gap: 80px;
+      align-items: center;
     }
 
-    .card {
+    .about-card {
+      min-height: 360px;
+      padding: 45px;
+      background: var(--wine);
+      color: white;
+      border-radius: 5px 100px 5px 5px;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+    }
+
+    .about-symbol {
+      font-size: 100px;
+      line-height: 1;
+    }
+
+    .about-card p {
+      font-family: 'Playfair Display', serif;
+      font-style: italic;
+      font-size: 29px;
+      line-height: 1.5;
+    }
+
+    /* SKILLS */
+    .skills-section {
       background: var(--white);
-      border: 1px solid var(--border);
-      padding: 32px;
-      border-radius: 16px;
     }
 
-    .accent-card {
-      background: var(--lightgreen);
-      border-color: var(--lightgreen);
-    }
-
-    .accent-card p {
-      color: var(--text);
-    }
-
-    .skills {
-      background: #f0f3ee;
-    }
-
-    .skills-grid,
-    .projects-grid {
+    .skills-grid {
       display: grid;
       grid-template-columns: repeat(3, 1fr);
-      gap: 22px;
+      gap: 20px;
+      margin-top: 45px;
     }
 
     .skill-card {
-      background: var(--white);
-      border-radius: 14px;
-      padding: 28px;
-      border: 1px solid var(--border);
+      min-height: 230px;
+      padding: 35px;
+      border: 1px solid var(--line);
+      transition: background .3s, transform .3s;
     }
 
-    .skill-icon {
-      font-size: 30px;
+    .skill-card:hover {
+      background: var(--cream);
+      transform: translateY(-6px);
+    }
+
+    .skill-number {
+      color: var(--wine);
+      font-size: 13px;
+      margin-bottom: 40px;
+    }
+
+    .skill-card h3 {
+      font-size: 23px;
       margin-bottom: 15px;
     }
 
-    .project-card {
-      background: var(--white);
-      border: 1px solid var(--border);
-      border-radius: 16px;
-      overflow: hidden;
-      transition: transform 0.3s, box-shadow 0.3s;
+    .skill-card p {
+      color: var(--muted);
+      font-size: 14px;
+      line-height: 1.7;
     }
 
-    .project-card:hover {
-      transform: translateY(-5px);
-      box-shadow: 0 10px 30px rgba(0,0,0,0.06);
-    }
-
-    .project-image {
-      height: 160px;
-      background: var(--lightgreen);
+    /* VIDEO PROJECTS */
+    .projects-header {
       display: flex;
-      justify-content: center;
+      justify-content: space-between;
+      align-items: end;
+      gap: 20px;
+      margin-bottom: 45px;
+    }
+
+    .projects-grid {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 25px;
+    }
+
+    .project-video {
+      aspect-ratio: 9 / 16;
+      background: var(--black);
+      border-radius: 8px;
+      overflow: hidden;
+      position: relative;
+      display: grid;
+      place-items: center;
+    }
+
+    .project-video video {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+      position: relative;
+      z-index: 2;
+    }
+
+    .video-placeholder {
+      position: absolute;
+      inset: 0;
+      z-index: 1;
+      background: linear-gradient(155deg, #783849, #231e20);
+      color: var(--cream);
+      display: flex;
       align-items: center;
-      font-size: 45px;
-    }
-
-    .project-content {
+      justify-content: center;
+      flex-direction: column;
+      gap: 18px;
       padding: 25px;
-    }
-
-    .project-tag {
-      color: var(--green);
-      font-weight: bold;
-      font-size: 12px;
-      text-transform: uppercase;
-      letter-spacing: 1px;
-      margin-bottom: 10px;
-    }
-
-    .contact {
       text-align: center;
     }
 
-    .contact p {
-      max-width: 550px;
-      margin: 0 auto 28px;
+    .video-placeholder span {
+      font-family: 'Playfair Display', serif;
+      font-size: 35px;
+      font-style: italic;
+    }
+
+    .video-placeholder small {
+      letter-spacing: 2px;
+      font-size: 10px;
+    }
+
+    .project-info {
+      padding: 20px 0;
+    }
+
+    .project-info h3 {
+      font-size: 23px;
+      margin-bottom: 9px;
+    }
+
+    .project-info p {
+      font-size: 13px;
+      color: var(--muted);
+      letter-spacing: 1px;
+    }
+
+    /* CONTACT */
+    .contact-section {
+      background: var(--black);
+      color: var(--cream);
+      text-align: center;
+    }
+
+    .contact-section h2 {
+      font-size: clamp(45px, 7vw, 95px);
+    }
+
+    .contact-section .serif {
+      color: var(--pink);
+    }
+
+    .contact-section p {
+      color: #c3b8b2;
+      margin: 0 auto 35px;
+      max-width: 500px;
+      line-height: 1.8;
+    }
+
+    .contact-section .btn {
+      background: var(--cream);
+      color: var(--black);
+    }
+
+    .contact-section .btn:hover {
+      background: var(--pink);
     }
 
     footer {
-      text-align: center;
-      padding: 30px 15px;
-      border-top: 1px solid var(--border);
-      font-size: 14px;
+      padding: 28px 0;
+      background: var(--black);
+      border-top: 1px solid #4b4144;
+      color: #c3b8b2;
     }
 
-    @media (max-width: 768px) {
+    .footer-inner {
+      display: flex;
+      justify-content: space-between;
+      gap: 20px;
+      font-size: 12px;
+      letter-spacing: 1px;
+    }
+
+    /* SCROLL ANIMATIONS */
+    .reveal {
+      opacity: 0;
+      transform: translateY(35px);
+      transition: opacity .85s ease, transform .85s ease;
+    }
+
+    .reveal.visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    /* MOBILE */
+    @media (max-width: 800px) {
       nav {
-        padding: 16px 0;
         flex-direction: column;
+        padding: 18px 0;
       }
 
       .nav-links {
+        gap: 16px;
+        flex-wrap: wrap;
         justify-content: center;
-        gap: 14px;
       }
 
-      section {
-        padding: 65px 0;
+      .nav-links a {
+        font-size: 10px;
       }
 
       .hero {
-        min-height: 460px;
+        min-height: 70vh;
+        padding: 75px 0;
+      }
+
+      h1 {
+        letter-spacing: -2px;
+      }
+
+      .hero-decoration {
+        font-size: 50px;
+        right: 8%;
+        bottom: 5%;
+      }
+
+      .section {
+        padding: 75px 0;
       }
 
       .about-grid,
-      .skills-grid,
+      .skills-grid {
+        grid-template-columns: 1fr;
+        gap: 20px;
+      }
+
+      .projects-grid {
+        grid-template-columns: repeat(2, minmax(0,1fr));
+      }
+
+      .projects-header {
+        display: block;
+      }
+
+      .footer-inner {
+        flex-direction: column;
+        text-align: center;
+      }
+    }
+
+    @media (max-width: 500px) {
       .projects-grid {
         grid-template-columns: 1fr;
       }
 
-      .card,
-      .skill-card {
-        padding: 24px;
+      .project-video {
+        max-width: 390px;
+        margin: auto;
+        width: 100%;
+      }
+
+      .about-card {
+        padding: 30px;
+      }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      html { scroll-behavior: auto; }
+      *, *::before, *::after {
+        animation: none !important;
+        transition: none !important;
+      }
+      .reveal {
+        opacity: 1;
+        transform: none;
       }
     }
   </style>
@@ -290,234 +548,297 @@
   <!-- NAVIGATION -->
   <header>
     <nav class="container">
-      <a href="#start" class="logo">Rania<span>.</span></a>
+      <a href="#home" class="logo">
+        RANIA <span>STUDIO.</span>
+      </a>
 
       <div class="nav-links">
-        <a href="#about">Über mich</a>
-        <a href="#skills">Fähigkeiten</a>
-        <a href="#projects">Projekte</a>
-        <a href="#contact">Kontakt</a>
+        <a href="#about">ABOUT</a>
+        <a href="#skills">EXPERTISE</a>
+        <a href="#work">WORK</a>
+        <a href="#contact">CONTACT</a>
       </div>
     </nav>
   </header>
 
   <main>
 
-    <!-- STARTSEITE -->
-    <section class="hero container" id="start">
-      <div>
+    <!-- HERO: STARTSEITE -->
+    <section class="hero" id="home">
+      <div class="container hero-content">
         <div class="eyebrow">
-          Willkommen in meinem Portfolio
+          <span class="dot"></span>
+          CREATIVE PORTFOLIO / SOCIAL MEDIA
         </div>
 
         <h1>
-          Hallo, ich bin<br>
-          <span class="highlight">Rania.</span>
+          Not just<br>
+          content.<br>
+          <span class="serif">It's a statement.</span>
         </h1>
 
-        <p>
-          Ich liebe es, Neues zu lernen, kreativ zu denken
-          und eigene Ideen in spannende Projekte
-          zu verwandeln.
+        <p class="hero-description">
+          Creative content, visual storytelling &
+          social media marketing.
+          Creating digital experiences designed
+          to make people stop scrolling.
         </p>
 
-        <a href="#projects" class="button">
-          Meine Projekte entdecken ↗
+        <a href="#work" class="btn">
+          EXPLORE MY WORK <span>↗</span>
         </a>
       </div>
+
+      <div class="hero-decoration" aria-hidden="true">✳</div>
     </section>
 
-    <!-- ÜBER MICH -->
-    <section id="about" class="container">
-      <div class="eyebrow">01 / Meine Geschichte</div>
+    <!-- ANIMATED TEXT -->
+    <div class="marquee" aria-hidden="true">
+      <div class="marquee-track">
+        <span>CREATIVE DIRECTION <b>✳</b> CONTENT CREATION <b>✳</b> SOCIAL MEDIA MARKETING <b>✳</b> VIDEO EDITING <b>✳</b></span>
+        <span>CREATIVE DIRECTION <b>✳</b> CONTENT CREATION <b>✳</b> SOCIAL MEDIA MARKETING <b>✳</b> VIDEO EDITING <b>✳</b></span>
+      </div>
+    </div>
 
-      <h2>Über mich</h2>
+    <!-- ABOUT ME -->
+    <section class="section" id="about">
+      <div class="container about-grid">
+        <div class="reveal">
+          <div class="section-label">01 / ABOUT ME</div>
 
-      <div class="about-grid">
-        <div class="card">
-          <h3>Schön, dass du hier bist!</h3>
+          <h2>
+            Creativity with<br>
+            <span class="serif">a purpose.</span>
+          </h2>
 
-          <p>
-            Mein Name ist Rania und ich interessiere mich
-            für digitale Gestaltung, Technologie
-            und kreative Projekte.
+          <p class="section-text">
+            Hi, ich bin Rania!
+            Ich interessiere mich für kreatives
+            Storytelling, Social Media Marketing
+            und visuelle Kommunikation.
           </p>
 
-          <p style="margin-top: 15px;">
-            Ich entwickle gerne neue Ideen,
-            lerne unterschiedliche Fähigkeiten
-            und arbeite daran, mich ständig
-            weiterzuentwickeln.
-          </p>
+          <br>
 
-          <p style="margin-top: 15px;">
-            Auf dieser Webseite möchte ich
-            meine Erfahrungen, Fähigkeiten
-            und Projekte präsentieren.
+          <p class="section-text">
+            Hier zeige ich meine kreativen Projekte,
+            Videos und Ideen. Mein Ziel ist es,
+            Inhalte zu schaffen, die nicht nur schön
+            aussehen, sondern auch Aufmerksamkeit
+            gewinnen und in Erinnerung bleiben.
           </p>
         </div>
 
-        <div class="card accent-card">
-          <div class="eyebrow">Mein Motto</div>
-
-          <h3>Immer neugierig bleiben.</h3>
+        <div class="about-card reveal">
+          <div class="about-symbol" aria-hidden="true">✳</div>
 
           <p>
-            Neue Ideen entdecken, Herausforderungen
-            annehmen und aus jedem Projekt
-            etwas lernen.
+            Good content looks beautiful.
+            Great content makes you feel something.
           </p>
         </div>
       </div>
     </section>
 
-    <!-- FÄHIGKEITEN -->
-    <section class="skills" id="skills">
+    <!-- EXPERTISE -->
+    <section class="section skills-section" id="skills">
       <div class="container">
-        <div class="eyebrow">02 / Was ich kann</div>
+        <div class="section-label">02 / MY EXPERTISE</div>
 
-        <h2>Meine Fähigkeiten</h2>
-
-        <p class="section-intro">
-          Hier findest du einige Bereiche,
-          für die ich mich interessiere
-          und in denen ich mich weiterentwickle.
-        </p>
+        <h2>
+          What I <span class="serif">create.</span>
+        </h2>
 
         <div class="skills-grid">
-
-          <div class="skill-card">
-            <div class="skill-icon">💻</div>
-            <h3>Webentwicklung</h3>
+          <article class="skill-card reveal">
+            <div class="skill-number">01 /</div>
+            <h3>Video Editing</h3>
             <p>
-              Ich beschäftige mich mit HTML,
-              CSS und den Grundlagen
-              moderner Webseiten.
+              Kreativer Videoschnitt,
+              dynamische Übergänge und
+              visuelles Storytelling.
             </p>
-          </div>
+          </article>
 
-          <div class="skill-card">
-            <div class="skill-icon">🎨</div>
-            <h3>Kreativität & Design</h3>
+          <article class="skill-card reveal">
+            <div class="skill-number">02 /</div>
+            <h3>Content Creation</h3>
             <p>
-              Ich interessiere mich für
-              klare Designs, Farben,
-              Layouts und kreative Gestaltung.
+              Ästhetischer Social-Media-Content,
+              kreative Ideen und
+              aufmerksamkeitsstarke Reels.
             </p>
-          </div>
+          </article>
 
-          <div class="skill-card">
-            <div class="skill-icon">🚀</div>
-            <h3>Problemlösung</h3>
+          <article class="skill-card reveal">
+            <div class="skill-number">03 /</div>
+            <h3>Social Media</h3>
             <p>
-              Ich lerne gerne neue Dinge,
-              suche nach Lösungen und
-              entwickle eigene Ideen.
+              Kreative Konzepte für
+              Markenkommunikation,
+              digitale Inhalte und Marketing.
             </p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- VIDEO PORTFOLIO -->
+    <section class="section" id="work">
+      <div class="container">
+
+        <div class="projects-header reveal">
+          <div>
+            <div class="section-label">03 / SELECTED WORK</div>
+
+            <h2>
+              Work that makes<br>
+              people <span class="serif">stop scrolling.</span>
+            </h2>
           </div>
+        </div>
+
+        <div class="projects-grid">
+
+          <!-- VIDEO 1 -->
+          <article class="project-card reveal">
+            <div class="project-video">
+              <div class="video-placeholder">
+                <span>01.</span>
+                <small>YOUR VIDEO PROJECT</small>
+              </div>
+
+              <video controls playsinline preload="none"
+                     aria-label="Beauty Campaign">
+                <source src="videos/projekt1.mp4" type="video/mp4">
+                Dein Browser unterstützt keine Videos.
+              </video>
+            </div>
+
+            <div class="project-info">
+              <h3>Beauty Campaign</h3>
+              <p>VIDEO EDITING / SOCIAL MEDIA</p>
+            </div>
+          </article>
+
+          <!-- VIDEO 2 -->
+          <article class="project-card reveal">
+            <div class="project-video">
+              <div class="video-placeholder">
+                <span>02.</span>
+                <small>YOUR VIDEO PROJECT</small>
+              </div>
+
+              <video controls playsinline preload="none"
+                     aria-label="Brand Story">
+                <source src="videos/projekt2.mp4" type="video/mp4">
+                Dein Browser unterstützt keine Videos.
+              </video>
+            </div>
+
+            <div class="project-info">
+              <h3>Brand Story</h3>
+              <p>CONTENT CREATION / STORYTELLING</p>
+            </div>
+          </article>
+
+          <!-- VIDEO 3 -->
+          <article class="project-card reveal">
+            <div class="project-video">
+              <div class="video-placeholder">
+                <span>03.</span>
+                <small>YOUR VIDEO PROJECT</small>
+              </div>
+
+              <video controls playsinline preload="none"
+                     aria-label="Social Media Reel">
+                <source src="videos/projekt3.mp4" type="video/mp4">
+                Dein Browser unterstützt keine Videos.
+              </video>
+            </div>
+
+            <div class="project-info">
+              <h3>Social Media Reel</h3>
+              <p>CREATIVE DIRECTION / EDITING</p>
+            </div>
+          </article>
 
         </div>
       </div>
     </section>
 
-    <!-- PROJEKTE -->
-    <section class="container" id="projects">
-      <div class="eyebrow">03 / Meine Arbeiten</div>
+    <!-- CONTACT -->
+    <section class="section contact-section" id="contact">
+      <div class="container reveal">
+        <div class="section-label" style="color:var(--pink)">
+          04 / LET'S CONNECT
+        </div>
 
-      <h2>Meine Projekte</h2>
-
-      <p class="section-intro">
-        Eine Auswahl meiner Projekte.
-        Dies sind zunächst Beispiele,
-        die ich später durch eigene
-        Arbeiten ersetzen kann.
-      </p>
-
-      <div class="projects-grid">
-
-        <article class="project-card">
-          <div class="project-image">🌐</div>
-
-          <div class="project-content">
-            <div class="project-tag">Webdesign</div>
-
-            <h3>Mein Portfolio</h3>
-
-            <p>
-              Meine erste selbst erstellte
-              Webseite mit HTML und CSS.
-            </p>
-          </div>
-        </article>
-
-        <article class="project-card">
-          <div class="project-image">🎨</div>
-
-          <div class="project-content">
-            <div class="project-tag">Design</div>
-
-            <h3>Kreatives Projekt</h3>
-
-            <p>
-              Platz für ein zukünftiges
-              Designprojekt oder
-              eine kreative Arbeit.
-            </p>
-          </div>
-        </article>
-
-        <article class="project-card">
-          <div class="project-image">✨</div>
-
-          <div class="project-content">
-            <div class="project-tag">Ideen</div>
-
-            <h3>Neues Projekt</h3>
-
-            <p>
-              Hier kann ich später
-              meine neuen Projekte,
-              Erfahrungen und Ergebnisse zeigen.
-            </p>
-          </div>
-        </article>
-
-      </div>
-    </section>
-
-    <!-- KONTAKT -->
-    <section class="contact" id="contact">
-      <div class="container">
-        <div class="eyebrow">04 / Kontakt</div>
-
-        <h2>Lass uns in Kontakt bleiben.</h2>
+        <h2>
+          Let's create<br>
+          <span class="serif">something iconic.</span>
+        </h2>
 
         <p>
-          Du hast eine Frage, eine Idee
-          oder möchtest mehr über meine Projekte
-          erfahren? Ich freue mich über eine Nachricht!
+          Du hast eine kreative Idee,
+          möchtest zusammenarbeiten
+          oder dich austauschen?
+          Ich freue mich auf deine Nachricht.
         </p>
 
-        <!-- Beispieladresse vor Veröffentlichung ersetzen -->
-        <a href="mailto:kontakt@beispiel.de" class="button">
-          Nachricht schreiben ↗
+        <!-- Hier später deine echte E-Mail eintragen -->
+        <a href="mailto:kontakt@beispiel.de" class="btn">
+          GET IN TOUCH ↗
         </a>
       </div>
     </section>
 
   </main>
 
-  <!-- FOOTER -->
   <footer>
-    <p>
-      © <span id="year"></span> Rania.
-      Mit Liebe und Kreativität gestaltet.
-    </p>
+    <div class="container footer-inner">
+      <span>© <span id="year"></span> RANIA STUDIO</span>
+      <span>CREATED WITH PURPOSE & CREATIVITY ✳</span>
+    </div>
   </footer>
 
   <script>
+    // Automatische Jahreszahl
     document.getElementById("year").textContent =
       new Date().getFullYear();
+
+    // Sanfte Animationen beim Scrollen
+    if ("IntersectionObserver" in window) {
+      const observer = new IntersectionObserver(entries => {
+        entries.forEach(entry => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add("visible");
+            observer.unobserve(entry.target);
+          }
+        });
+      }, { threshold: 0.1 });
+
+      document.querySelectorAll(".reveal").forEach(el => {
+        observer.observe(el);
+      });
+    } else {
+      document.querySelectorAll(".reveal").forEach(el => {
+        el.classList.add("visible");
+      });
+    }
+
+    // Fehlende Videos ausblenden, Platzhalter zeigen
+    document.querySelectorAll(".project-video video").forEach(video => {
+      video.addEventListener("loadeddata", () => {
+        video.style.display = "block";
+      });
+
+      video.addEventListener("error", () => {
+        video.style.display = "none";
+      });
+
+      video.style.display = "none";
+    });
   </script>
 
 </body>
