@@ -1,1 +1,524 @@
 
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Das persönliche Portfolio von Rania">
+  <title>Rania | Mein Portfolio</title>
+
+  <style>
+    :root {
+      --bg: #fafaf8;
+      --white: #ffffff;
+      --text: #202421;
+      --muted: #68716b;
+      --green: #376b57;
+      --lightgreen: #e8f0e9;
+      --border: #e1e7e1;
+    }
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      font-family: Arial, Helvetica, sans-serif;
+      background: var(--bg);
+      color: var(--text);
+      line-height: 1.7;
+    }
+
+    a {
+      text-decoration: none;
+      color: inherit;
+    }
+
+    .container {
+      width: 90%;
+      max-width: 1100px;
+      margin: auto;
+    }
+
+    header {
+      background: rgba(250,250,248,0.96);
+      border-bottom: 1px solid var(--border);
+      position: sticky;
+      top: 0;
+      z-index: 100;
+    }
+
+    nav {
+      min-height: 75px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 20px;
+    }
+
+    .logo {
+      font-size: 26px;
+      font-weight: bold;
+    }
+
+    .logo span,
+    .highlight {
+      color: var(--green);
+    }
+
+    .nav-links {
+      display: flex;
+      gap: 25px;
+      flex-wrap: wrap;
+    }
+
+    .nav-links a {
+      font-size: 14px;
+      transition: color 0.3s;
+    }
+
+    .nav-links a:hover {
+      color: var(--green);
+    }
+
+    section {
+      padding: 90px 0;
+      scroll-margin-top: 75px;
+    }
+
+    .hero {
+      min-height: 560px;
+      display: flex;
+      align-items: center;
+    }
+
+    .eyebrow {
+      color: var(--green);
+      font-size: 13px;
+      font-weight: bold;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      margin-bottom: 18px;
+    }
+
+    h1 {
+      font-size: clamp(42px, 7vw, 76px);
+      line-height: 1.15;
+      margin-bottom: 25px;
+      letter-spacing: -2px;
+    }
+
+    h2 {
+      font-size: clamp(30px, 5vw, 42px);
+      line-height: 1.3;
+      margin-bottom: 25px;
+    }
+
+    h3 {
+      font-size: 21px;
+      margin-bottom: 12px;
+    }
+
+    p {
+      color: var(--muted);
+    }
+
+    .hero p {
+      max-width: 590px;
+      font-size: 18px;
+      margin-bottom: 32px;
+    }
+
+    .button {
+      display: inline-block;
+      background: var(--green);
+      color: white;
+      padding: 13px 26px;
+      border-radius: 40px;
+      font-weight: bold;
+      font-size: 14px;
+      transition: transform 0.3s, background 0.3s;
+    }
+
+    .button:hover {
+      background: #24503f;
+      transform: translateY(-3px);
+    }
+
+    .section-intro {
+      max-width: 680px;
+      margin-bottom: 35px;
+    }
+
+    .about-grid {
+      display: grid;
+      grid-template-columns: 1.5fr 1fr;
+      gap: 25px;
+    }
+
+    .card {
+      background: var(--white);
+      border: 1px solid var(--border);
+      padding: 32px;
+      border-radius: 16px;
+    }
+
+    .accent-card {
+      background: var(--lightgreen);
+      border-color: var(--lightgreen);
+    }
+
+    .accent-card p {
+      color: var(--text);
+    }
+
+    .skills {
+      background: #f0f3ee;
+    }
+
+    .skills-grid,
+    .projects-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 22px;
+    }
+
+    .skill-card {
+      background: var(--white);
+      border-radius: 14px;
+      padding: 28px;
+      border: 1px solid var(--border);
+    }
+
+    .skill-icon {
+      font-size: 30px;
+      margin-bottom: 15px;
+    }
+
+    .project-card {
+      background: var(--white);
+      border: 1px solid var(--border);
+      border-radius: 16px;
+      overflow: hidden;
+      transition: transform 0.3s, box-shadow 0.3s;
+    }
+
+    .project-card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 10px 30px rgba(0,0,0,0.06);
+    }
+
+    .project-image {
+      height: 160px;
+      background: var(--lightgreen);
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      font-size: 45px;
+    }
+
+    .project-content {
+      padding: 25px;
+    }
+
+    .project-tag {
+      color: var(--green);
+      font-weight: bold;
+      font-size: 12px;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      margin-bottom: 10px;
+    }
+
+    .contact {
+      text-align: center;
+    }
+
+    .contact p {
+      max-width: 550px;
+      margin: 0 auto 28px;
+    }
+
+    footer {
+      text-align: center;
+      padding: 30px 15px;
+      border-top: 1px solid var(--border);
+      font-size: 14px;
+    }
+
+    @media (max-width: 768px) {
+      nav {
+        padding: 16px 0;
+        flex-direction: column;
+      }
+
+      .nav-links {
+        justify-content: center;
+        gap: 14px;
+      }
+
+      section {
+        padding: 65px 0;
+      }
+
+      .hero {
+        min-height: 460px;
+      }
+
+      .about-grid,
+      .skills-grid,
+      .projects-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .card,
+      .skill-card {
+        padding: 24px;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <!-- NAVIGATION -->
+  <header>
+    <nav class="container">
+      <a href="#start" class="logo">Rania<span>.</span></a>
+
+      <div class="nav-links">
+        <a href="#about">Über mich</a>
+        <a href="#skills">Fähigkeiten</a>
+        <a href="#projects">Projekte</a>
+        <a href="#contact">Kontakt</a>
+      </div>
+    </nav>
+  </header>
+
+  <main>
+
+    <!-- STARTSEITE -->
+    <section class="hero container" id="start">
+      <div>
+        <div class="eyebrow">
+          Willkommen in meinem Portfolio
+        </div>
+
+        <h1>
+          Hallo, ich bin<br>
+          <span class="highlight">Rania.</span>
+        </h1>
+
+        <p>
+          Ich liebe es, Neues zu lernen, kreativ zu denken
+          und eigene Ideen in spannende Projekte
+          zu verwandeln.
+        </p>
+
+        <a href="#projects" class="button">
+          Meine Projekte entdecken ↗
+        </a>
+      </div>
+    </section>
+
+    <!-- ÜBER MICH -->
+    <section id="about" class="container">
+      <div class="eyebrow">01 / Meine Geschichte</div>
+
+      <h2>Über mich</h2>
+
+      <div class="about-grid">
+        <div class="card">
+          <h3>Schön, dass du hier bist!</h3>
+
+          <p>
+            Mein Name ist Rania und ich interessiere mich
+            für digitale Gestaltung, Technologie
+            und kreative Projekte.
+          </p>
+
+          <p style="margin-top: 15px;">
+            Ich entwickle gerne neue Ideen,
+            lerne unterschiedliche Fähigkeiten
+            und arbeite daran, mich ständig
+            weiterzuentwickeln.
+          </p>
+
+          <p style="margin-top: 15px;">
+            Auf dieser Webseite möchte ich
+            meine Erfahrungen, Fähigkeiten
+            und Projekte präsentieren.
+          </p>
+        </div>
+
+        <div class="card accent-card">
+          <div class="eyebrow">Mein Motto</div>
+
+          <h3>Immer neugierig bleiben.</h3>
+
+          <p>
+            Neue Ideen entdecken, Herausforderungen
+            annehmen und aus jedem Projekt
+            etwas lernen.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- FÄHIGKEITEN -->
+    <section class="skills" id="skills">
+      <div class="container">
+        <div class="eyebrow">02 / Was ich kann</div>
+
+        <h2>Meine Fähigkeiten</h2>
+
+        <p class="section-intro">
+          Hier findest du einige Bereiche,
+          für die ich mich interessiere
+          und in denen ich mich weiterentwickle.
+        </p>
+
+        <div class="skills-grid">
+
+          <div class="skill-card">
+            <div class="skill-icon">💻</div>
+            <h3>Webentwicklung</h3>
+            <p>
+              Ich beschäftige mich mit HTML,
+              CSS und den Grundlagen
+              moderner Webseiten.
+            </p>
+          </div>
+
+          <div class="skill-card">
+            <div class="skill-icon">🎨</div>
+            <h3>Kreativität & Design</h3>
+            <p>
+              Ich interessiere mich für
+              klare Designs, Farben,
+              Layouts und kreative Gestaltung.
+            </p>
+          </div>
+
+          <div class="skill-card">
+            <div class="skill-icon">🚀</div>
+            <h3>Problemlösung</h3>
+            <p>
+              Ich lerne gerne neue Dinge,
+              suche nach Lösungen und
+              entwickle eigene Ideen.
+            </p>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- PROJEKTE -->
+    <section class="container" id="projects">
+      <div class="eyebrow">03 / Meine Arbeiten</div>
+
+      <h2>Meine Projekte</h2>
+
+      <p class="section-intro">
+        Eine Auswahl meiner Projekte.
+        Dies sind zunächst Beispiele,
+        die ich später durch eigene
+        Arbeiten ersetzen kann.
+      </p>
+
+      <div class="projects-grid">
+
+        <article class="project-card">
+          <div class="project-image">🌐</div>
+
+          <div class="project-content">
+            <div class="project-tag">Webdesign</div>
+
+            <h3>Mein Portfolio</h3>
+
+            <p>
+              Meine erste selbst erstellte
+              Webseite mit HTML und CSS.
+            </p>
+          </div>
+        </article>
+
+        <article class="project-card">
+          <div class="project-image">🎨</div>
+
+          <div class="project-content">
+            <div class="project-tag">Design</div>
+
+            <h3>Kreatives Projekt</h3>
+
+            <p>
+              Platz für ein zukünftiges
+              Designprojekt oder
+              eine kreative Arbeit.
+            </p>
+          </div>
+        </article>
+
+        <article class="project-card">
+          <div class="project-image">✨</div>
+
+          <div class="project-content">
+            <div class="project-tag">Ideen</div>
+
+            <h3>Neues Projekt</h3>
+
+            <p>
+              Hier kann ich später
+              meine neuen Projekte,
+              Erfahrungen und Ergebnisse zeigen.
+            </p>
+          </div>
+        </article>
+
+      </div>
+    </section>
+
+    <!-- KONTAKT -->
+    <section class="contact" id="contact">
+      <div class="container">
+        <div class="eyebrow">04 / Kontakt</div>
+
+        <h2>Lass uns in Kontakt bleiben.</h2>
+
+        <p>
+          Du hast eine Frage, eine Idee
+          oder möchtest mehr über meine Projekte
+          erfahren? Ich freue mich über eine Nachricht!
+        </p>
+
+        <!-- Beispieladresse vor Veröffentlichung ersetzen -->
+        <a href="mailto:kontakt@beispiel.de" class="button">
+          Nachricht schreiben ↗
+        </a>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- FOOTER -->
+  <footer>
+    <p>
+      © <span id="year"></span> Rania.
+      Mit Liebe und Kreativität gestaltet.
+    </p>
+  </footer>
+
+  <script>
+    document.getElementById("year").textContent =
+      new Date().getFullYear();
+  </script>
+
+</body>
+</html>
