@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html lang="de">
 <head>
@@ -9,7 +8,7 @@
 
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:ital,wght@0,500;0,600;1,500;1,600&family=Caveat:wght@500;700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:ital,wght@0,500;0,600;1,500;1,600&display=swap" rel="stylesheet">
 
 <style>
 :root {
@@ -172,10 +171,8 @@ nav {
 .hero-visual {
   width: 100%;
   display: flex;
-  flex-direction: column;
   align-items: center;
   justify-content: center;
-  gap: 23px;
   padding: 20px 0;
 }
 
@@ -199,15 +196,8 @@ nav {
   overflow: hidden;
   position: relative;
   background:
-    linear-gradient(155deg,
-      rgba(27,15,23,.12),
-      rgba(27,15,23,.6)),
-    radial-gradient(
-      circle at 30% 20%,
-      #e7baa9,
-      #aa7770 38%,
-      #38222e 90%
-    );
+    linear-gradient(155deg, rgba(27,15,23,.12), rgba(27,15,23,.6)),
+    radial-gradient(circle at 30% 20%, #e7baa9, #aa7770 38%, #38222e 90%);
 }
 
 .phone-notch {
@@ -291,14 +281,6 @@ nav {
   height: 100%;
   background: white;
   border-radius: 4px;
-}
-
-.phone-caption {
-  font-family: "Caveat", cursive;
-  color: var(--pink);
-  font-size: 30px;
-  text-align: center;
-  line-height: 1.15;
 }
 
 /* TEXTBAND */
@@ -616,10 +598,6 @@ footer {
     width: 235px;
   }
 
-  .phone-caption {
-    font-size: 27px;
-  }
-
   .section {
     padding: 75px 0;
   }
@@ -686,8 +664,6 @@ footer {
 
 <body>
 
-<!-- NAVIGATION -->
-
 <header>
   <nav class="wrap">
     <a class="brand" href="#home">
@@ -705,16 +681,11 @@ footer {
 
 <main>
 
-<!-- STARTSEITE -->
-
 <section class="hero" id="home">
   <div class="wrap">
     <div class="hero-grid">
 
-      <!-- LINKER BEREICH -->
-
       <div class="hero-text">
-
         <div class="kicker">
           ● CREATIVE PORTFOLIO / SOCIAL MEDIA
         </div>
@@ -738,20 +709,13 @@ footer {
           MEINE PROJEKTE ENTDECKEN
           <span>↗</span>
         </a>
-
       </div>
 
-      <!-- RECHTER BEREICH: HANDY MOCKUP -->
-
       <div class="hero-visual">
-
-        <div class="phone-mockup"
-             aria-label="Dekoratives Smartphone-Mockup">
-
+        <div class="phone-mockup" aria-label="Dekoratives Smartphone-Mockup">
           <div class="phone-notch"></div>
 
           <div class="phone-screen">
-
             <div class="phone-content">
 
               <div class="phone-label">
@@ -773,23 +737,13 @@ footer {
               </div>
 
             </div>
-
           </div>
-
         </div>
-
-        <div class="phone-caption">
-          Momente einfangen.<br>
-          Geschichten erzählen. ♡
-        </div>
-
       </div>
 
     </div>
   </div>
 </section>
-
-<!-- TEXTBAND -->
 
 <div class="ticker" aria-hidden="true">
   CONTENT CREATION <span>✳</span>
@@ -798,13 +752,10 @@ footer {
   SOCIAL MEDIA MARKETING
 </div>
 
-<!-- ÜBER MICH -->
-
 <section class="section" id="about">
   <div class="wrap about">
 
     <div class="reveal">
-
       <div class="num">
         01 / ABOUT ME
       </div>
@@ -827,7 +778,6 @@ footer {
         die Aufmerksamkeit schaffen und visuell
         in Erinnerung bleiben.
       </p>
-
     </div>
 
     <div class="quote reveal">
@@ -837,8 +787,6 @@ footer {
 
   </div>
 </section>
-
-<!-- FÄHIGKEITEN -->
 
 <section class="section skills" id="skills">
   <div class="wrap">
@@ -881,11 +829,8 @@ footer {
       </article>
 
     </div>
-
   </div>
 </section>
-
-<!-- VIDEOPROJEKTE -->
 
 <section class="section work" id="work">
   <div class="wrap">
@@ -907,84 +852,58 @@ footer {
 
     <div class="projects">
 
-      <!-- VIDEO 1 -->
-
       <article class="project reveal">
-
         <div class="frame">
-
           <div class="placeholder">
             <b>01</b>
             <p>BEAUTY CAMPAIGN</p>
           </div>
 
-          <video controls playsinline preload="metadata"
-                 aria-label="Beauty Campaign">
-            <source src="videos/projekt1.mp4"
-                    type="video/mp4">
+          <video controls playsinline preload="metadata" aria-label="Beauty Campaign">
+            <source src="videos/projekt1.mp4" type="video/mp4">
           </video>
-
         </div>
 
         <h3>Beauty Campaign</h3>
         <p>VIDEO EDITING / SOCIAL MEDIA</p>
-
       </article>
 
-      <!-- VIDEO 2 -->
-
       <article class="project reveal">
-
         <div class="frame">
-
           <div class="placeholder">
             <b>02</b>
             <p>BRAND STORY</p>
           </div>
 
-          <video controls playsinline preload="metadata"
-                 aria-label="Brand Story">
-            <source src="videos/projekt2.mp4"
-                    type="video/mp4">
+          <video controls playsinline preload="metadata" aria-label="Brand Story">
+            <source src="videos/projekt2.mp4" type="video/mp4">
           </video>
-
         </div>
 
         <h3>Brand Story</h3>
         <p>STORYTELLING / CONTENT</p>
-
       </article>
 
-      <!-- VIDEO 3 -->
-
       <article class="project reveal">
-
         <div class="frame">
-
           <div class="placeholder">
             <b>03</b>
             <p>SOCIAL MEDIA REEL</p>
           </div>
 
-          <video controls playsinline preload="metadata"
-                 aria-label="Social Media Reel">
-            <source src="videos/projekt3.mp4"
-                    type="video/mp4">
+          <video controls playsinline preload="metadata" aria-label="Social Media Reel">
+            <source src="videos/projekt3.mp4" type="video/mp4">
           </video>
-
         </div>
 
         <h3>Social Media Reel</h3>
         <p>CREATIVE DIRECTION / EDITING</p>
-
       </article>
 
     </div>
 
   </div>
 </section>
-
-<!-- KONTAKT -->
 
 <section class="section contact" id="contact">
   <div class="wrap reveal">
@@ -1007,8 +926,6 @@ footer {
       Ich freue mich auf deine Nachricht.
     </p>
 
-    <!-- E-Mail später ersetzen -->
-
     <a href="mailto:kontakt@beispiel.de" class="button">
       GET IN TOUCH ↗
     </a>
@@ -1018,85 +935,44 @@ footer {
 
 </main>
 
-<!-- FOOTER -->
-
 <footer>
   <div class="wrap foot">
-
-    <span>
-      © <span id="year"></span> RANIA STUDIO
-    </span>
-
-    <span>
-      MADE TO BE REMEMBERED ✳
-    </span>
-
+    <span>© <span id="year"></span> RANIA STUDIO</span>
+    <span>MADE TO BE REMEMBERED ✳</span>
   </div>
 </footer>
 
-<!-- JAVASCRIPT -->
-
 <script>
-
-// Aktuelle Jahreszahl
-
-document.getElementById("year").textContent =
-  new Date().getFullYear();
-
-// Animationen beim Scrollen
+document.getElementById("year").textContent = new Date().getFullYear();
 
 if ("IntersectionObserver" in window) {
-
   const observer = new IntersectionObserver(entries => {
-
     entries.forEach(entry => {
-
       if (entry.isIntersecting) {
-
         entry.target.classList.add("visible");
-
         observer.unobserve(entry.target);
-
       }
-
     });
-
   }, { threshold: 0.08 });
 
   document.querySelectorAll(".reveal").forEach(element => {
-
     observer.observe(element);
-
   });
-
 } else {
-
   document.querySelectorAll(".reveal").forEach(element => {
-
     element.classList.add("visible");
-
   });
-
 }
 
-// Hochgeladene Videos anzeigen
-
 document.querySelectorAll(".project video").forEach(video => {
-
   video.addEventListener("loadedmetadata", () => {
-
     video.classList.add("ready");
-
   });
 
   video.addEventListener("error", () => {
-
     video.classList.remove("ready");
-
   });
-
 });
-
 </script>
 
 </body>
